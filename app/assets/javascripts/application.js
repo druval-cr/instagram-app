@@ -12,4 +12,20 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+//= require_tree
+//= require jquery
+
+$(document).ready(function() {
+    if ($('.pagination').length > 0) {
+      $(window).scroll(function() {
+        var url = $('.pagination .next_page').attr('href');
+        var scrollHeight = $(document).height();
+        var scrollPos = $(window).height() + $(window).scrollTop();
+        if (url && (scrollPos > scrollHeight - 50)) {
+          $('.pagination').text("Load more...");
+          return $.getScript(url);
+        }
+      });
+      return $(window).scroll();
+    }
+}); 

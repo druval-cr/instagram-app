@@ -2,9 +2,8 @@
     <div class = "main-button">
         <%= link_to "Add Post", new_post_path %>
     </div>
-    <div class = "index__posts">
-        <% @posts.each do |post|%>
-            <%= render partial: "posts/post", locals: { post: post } %>
-        <% end %>
+    <div id = "posts" class = "index__posts">
+        <%= render @posts %>
     </div>
 </div>
+<%= will_paginate @posts %>

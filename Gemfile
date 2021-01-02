@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem "paperclip", "~> 6.0.0"
 
+gem 'jquery-rails'
+
+gem 'will_paginate', '~> 3.3'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -2,7 +2,8 @@ class PostsController < ApplicationController
     before_action :validate_url_id, only: [:edit, :update, :destroy]
 
     def index
-        @posts = Post.all
+        #@posts = Post.all
+        @posts = Post.order(updated_at: :desc).paginate(page: params[:page], per_page: 3)
     end
 
     def new
