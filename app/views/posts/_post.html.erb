@@ -1,0 +1,10 @@
+<div class = "post">
+    <h3><%= post.caption %></h3>
+    <div class = "post-field">
+        <%= image_tag post.image.url(:medium) %>
+    </div>
+    <div class = "post-field">
+        <%= link_to "Edit", edit_post_path(post) %>
+        <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure to delete?" } %>
+    </div>
+</div>
